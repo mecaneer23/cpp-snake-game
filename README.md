@@ -6,5 +6,6 @@ This is a work in progress, it doesn't work yet
 
 ## TODO
 
-- fix last remaining error
 - fix any remaining logic errors
+    - weird lag
+    - snake immediately dies (currently working only because line is commented)
