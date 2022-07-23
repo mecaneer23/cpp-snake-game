@@ -1,4 +1,4 @@
-/* g++ -o snake snake.cpp; ./snake */
+/* g++ -o snake snake.cpp -lncurses; ./snake */
 #include <iostream>
 #include <ncurses.h>
 #include <cstring>
@@ -74,7 +74,7 @@ std::string snake(void)
         headless_snake.erase(headless_snake.begin());
         if (std::count(headless_snake.begin(), headless_snake.end(), snake[0]))
         {
-            return "Snake can't eat itself, score: " + std::to_string(score);
+            // return "Snake can't eat itself, score: " + std::to_string(score);
         }
         std::copy(snake[0].begin(), snake[0].end(), std::back_inserter(new_head));
         if (direction == 119 || direction == 259)
@@ -103,7 +103,8 @@ std::string snake(void)
         }
         if (!paused)
         {
-            snake.insert(snake.begin(), new_head.begin(), new_head.end());
+            // snake.insert(snake.begin(), new_head.begin(), new_head.end());
+            snake.insert(snake.begin(), new_head);
             if (snake[0] == food)
             {
                 food = {0, 0};
